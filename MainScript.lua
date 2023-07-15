@@ -612,6 +612,6 @@ Tab3Section:NewButton("FPSUnlocker", "", function()
 end)
 
 --Home
-local Section1 = Tab1:NewSection("Welcome: " .. plrname .. " To: Project VOID CustomModule Private UI")
-local Section2 = Tab1:NewSection("Player Id: " .. game.Players.LocalPlayer.UserId)
-local Section3 = Tab1:NewSection("Account Age: " .. game.Players.LocalPlayer.AccountAge)
+local Tab1Section = Tab1:NewSection("Welcome: " .. plrname .. " To: Project VOID CustomModule Private UI")
+local Tab1Section = Tab1:NewSection("Player Id: " .. game.Players.LocalPlayer.UserId)
+local Tab1Section = Tab1:NewSection("Account Age: " .. game.Players.LocalPlayer.AccountAge)
