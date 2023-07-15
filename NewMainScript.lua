@@ -1,5 +1,5 @@
 local Library = loadstring(game:HttpGet("https://pastebin.com/raw/vff1bQ9F"))()
-local Window = Library.CreateLib("Project VOID Texture UI", "Serpent")
+local Window = Library:CreateLib("Project VOID Texture UI", "Serpent")
 
 --Tab
 local Tab = Window:NewTab("Home")
@@ -7,13 +7,13 @@ local Tab1 = Window:NewTab("Main")
 local Tab2 = Window:NewTab("Credits")
 
 --Section
-local TabSection = Tab1:NewSection("Welcome:" ..plrname.. " To: Project VOID Texture UI")
-local Tab1Section = Tab3:NewSection("Choose Texture")
+local TabSection = Tab1:NewSection("Welcome: " .. game.Players.LocalPlayer.Name .. " To: Project VOID Texture UI")
+local Tab1Section = Tab1:NewSection("Choose Texture")
 local Tab2Section = Tab:NewSection("Credit To fakemarioguys (discord name)")
 
 --Label
-TabSection:NewLabel("Player Id: "..game.Players.LocalPlayer.UserId .."")
-TabSection:NewLabel("Account Age: "..game.Players.LocalPlayer.AccountAge.."")
+TabSection:NewLabel("Player Id: " .. game.Players.LocalPlayer.UserId)
+TabSection:NewLabel("Account Age: " .. game.Players.LocalPlayer.AccountAge)
 
 --Main
 Tab1Section:NewButton("Vape", "", function()
