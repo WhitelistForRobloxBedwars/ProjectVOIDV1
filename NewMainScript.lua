@@ -16,14 +16,6 @@ TabSection:NewLabel("Player Id: "..game.Players.LocalPlayer.UserId .."")
 TabSection:NewLabel("Account Age: "..game.Players.LocalPlayer.AccountAge.."")
 
 --Main
-Tab1Section:NewButton("CustomModule Private UI", "", function()
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/ProjectVOIDV1/ProjectVOIDV1/main/MainScript.lua"))()
-end)
-
-Tab1Section:NewButton("CustomModule Public UI", "", function()
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/ProjectVOIDV1/ProjectVOIDV1/main/MainScripts.lua"))()
-end)
-
 Tab1Section:NewButton("Vape", "", function()
     loadstring(game:HttpGet("https://raw.githubusercontent.com/7GrandDadPGN/VapeV4ForRoblox/main/NewMainScript.lua", true))()
 end)
