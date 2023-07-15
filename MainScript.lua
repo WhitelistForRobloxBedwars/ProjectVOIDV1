@@ -1,5 +1,3 @@
-loadstring(game:HttpGet("https://raw.githubusercontent.com/7GrandDadPGN/VapeV4ForRoblox/main/NewMainScript.lua", true))()
-
 local Library = loadstring(game:HttpGet("https://pastebin.com/raw/vff1bQ9F"))()
 local Window = Library.CreateLib("Project VOID CustomModule Private UI", "Serpent")
 
@@ -15,42 +13,6 @@ local Tab3Section = Tab3:NewSection("Render")
 local TabSection = Tab:NewSection("Credit To fakemarioguys (discord name)")
 
 --Blatant
-Tab2Section:NewToggle("ScytheDisabler Using With Fly Of Vape", "", function(state)
-    if state then
-        task.spawn(function()
-            repeat
-                task.wait(0.01)
-                local item = getItemNear("scythe")
-                if item and lplr.Character.HandInvItem.Value == item.tool then 
-                    if bedwars.ClientHandler:Get("ScytheDash"):CallServer({direction = Vector3.new(math.huge, math.huge, math.huge)}) then 
-                        bedwarsStore.grapple = tick() + 1.5
-                    end
-                end
-            until (not Tab2Section:GetToggle())
-        end)
-    end
-end)
-
-Tab2Section:NewToggle("OldScytheDisabler (SD)", "OldACBypass", function(state)
-    if state then
-        while task.wait() do
-            local args = {
-                [1] = {
-                    ["direction"] = Vector3.new(0.5041335225105286, -1.6061335372796748e-08, 0.863625705242157)
-                }
-            }
-        
-            game:GetService("ReplicatedStorage"):WaitForChild("rbxts_include"):WaitForChild("node_modules"):WaitForChild("@rbxts"):WaitForChild("net"):WaitForChild("out"):WaitForChild("_NetManaged"):WaitForChild("ScytheDash"):InvokeServer(unpack(args))
-        end
-    end
-end)
-
-Tab2Section:NewToggle("SpeedSD", "", function(state)
-    if state then
-        game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 30
-    end
-end)
-
 Tab2Section:NewToggle("InfiniteJump", "", function(state)
     if state then
         local infiniteJumpEnabled = true
