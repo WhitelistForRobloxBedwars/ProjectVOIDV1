@@ -13,7 +13,7 @@ local Tab3Section = Tab3:NewSection("Render")
 local TabSection = Tab:NewSection("Credit To fakemarioguys (discord name)")
 
 --Blatant
-Tab2Section:NewButton("Texture UI", "", function()
+Tab2Section:NewButton("TextureUI", "", function()
         loadstring(game:HttpGet("https://raw.githubusercontent.com/ProjectVOIDV1/ProjectVOIDV1/main/NewMainScript.lua"))()
     end)
 
