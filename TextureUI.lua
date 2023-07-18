@@ -1,38 +1,28 @@
 local Library = loadstring(game:HttpGet("https://pastebin.com/raw/vff1bQ9F"))()
-local Window = Library:CreateLib("Project VOID Texture UI", "Serpent")
+local Window = Library:CreateLib("Texture UI", "Serpent")
 
---Tab
 local Tab = Window:NewTab("Home")
-local Tab1 = Window:NewTab("Main")
-local Tab2 = Window:NewTab("Credits")
+local TabSection = Tab:NewSection("Welcome: " .. game.Players.LocalPlayer.Name .. " To: Project VOID Texture UI")
+local Section = Tab:NewSection("Choose Texture")
+Section:NewLabel("Player Id: " .. game.Players.LocalPlayer.UserId)
+Section:NewLabel("Account Age: " .. game.Players.LocalPlayer.AccountAge)
 
---Section
-local TabSection = Tab1:NewSection("Welcome: " .. game.Players.LocalPlayer.Name .. " To: Project VOID Texture UI")
-local Tab1Section = Tab1:NewSection("Choose Texture")
-local Tab2Section = Tab:NewSection("Credit To fakemarioguys (discord name)")
+local Tab = Window:NewTab("Main")
+local Section = Tab:NewSection("Choose Texture")
 
---Label
-TabSection:NewLabel("Player Id: " .. game.Players.LocalPlayer.UserId)
-TabSection:NewLabel("Account Age: " .. game.Players.LocalPlayer.AccountAge)
-
---Main
-Tab1Section:NewButton("Vape", "", function()
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/7GrandDadPGN/VapeV4ForRoblox/main/NewMainScript.lua", true))()
-end)
-
-Tab1Section:NewButton("TxtPack1", "", function()
+Section:NewButton("TxtPack1", "", function()
     loadstring(game:HttpGet("https://raw.githubusercontent.com/ProjectVOIDV1/ProjectVOIDV1/main/Texture.lua"))()
 end)
 
-Tab1Section:NewButton("TxtPack2", "", function()
+Section:NewButton("TxtPack2", "", function()
     loadstring(game:HttpGet("https://raw.githubusercontent.com/Ayto0/HardWare/main/SnoopyLeakedTexturePack", true))()
 end)
 
-Tab1Section:NewButton("TxtPack3", "", function()
+Section:NewButton("TxtPack3", "", function()
     loadstring(game:HttpGet("https://raw.githubusercontent.com/ProjectVOIDV1/ProjectVOIDV1/main/Texture2.lua"))()
 end)
 
-Tab1Section:NewButton("TxtPack4", "", function()
+Section:NewButton("TxtPack4", "", function()
     local Players = game:GetService("Players")
     local ReplicatedStorage = game:GetService("ReplicatedStorage")
     local Workspace = game:GetService("Workspace")
@@ -113,3 +103,6 @@ Tab1Section:NewButton("TxtPack4", "", function()
         end
     end)
 end)
+
+local Tab = Window:NewTab("Credits")
+local Section = Tab:NewSection("Credit To fakemarioguys (discord name)")
