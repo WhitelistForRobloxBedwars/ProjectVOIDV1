@@ -1,5 +1,15 @@
+
 local Library = loadstring(game:HttpGet("https://pastebin.com/raw/vff1bQ9F"))()
 local Window = Library:CreateLib("Texture UI", "Serpent")
+local GameId = game.PlaceId
+local GameName = game:GetService("MarketplaceService"):GetProductInfo(game.PlaceId).Name
+local plrs = game:GetService("Players")
+local plr = plrs.LocalPlayer
+local plrname = plr.Name
+local plrid = plr.UserId
+local plrchr = plr.Character
+local plrage = plr.AccountAge
+local plrcount = #game.Players:GetPlayers()
 
 local Tab = Window:NewTab("Home")
 local TabSection = Tab:NewSection("Welcome: " .. game.Players.LocalPlayer.Name .. " To: Project VOID Texture UI")
