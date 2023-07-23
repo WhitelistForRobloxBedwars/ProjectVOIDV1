@@ -1,65 +1,3 @@
-local Players = game:GetService("Players")
-local ReplicatedStorage = game:GetService("ReplicatedStorage")
-local player = Players.LocalPlayer
-local ChatTag = {}
-
--- Define ChatTags based on player names
-if player.Name == "BedwarsIsbestgame0" or player.Name == "BedwarsFromOhio1" or player.Name == "BedwarsIsBest5563" or player.Name == "AntiCheat1880" or player.Name == "Season8IsBestTYDev" or player.Name == "BedwarsIsGoodLol2" or player.Name == "ambushcomehereeee" then
-    ChatTag[player.Name] = {
-        TagText = "Project VOID Owner",
-        TagColor = Color3.fromRGB(102, 0, 255),
-    }
-elseif player.Name == "killerrodot12" or player.Name == "Techbed3" or player.Name == "kindreckjohn12345" or player.Name == "Black_history100" then
-    ChatTag[player.Name] = {
-        TagText = "Project VOID Tester",
-        TagColor = Color3.fromRGB(102, 0, 255),
-    }
-else
-    ChatTag[player.Name] = {
-        TagText = "Project VOID User",
-        TagColor = Color3.fromRGB(29, 118, 195),
-    }
-end
-
-local oldchanneltab
-local oldchannelfunc
-local oldchanneltabs = {}
-
--- Chat Listener
-for i, v in pairs(getconnections(ReplicatedStorage.DefaultChatSystemChatEvents.OnNewMessage.OnClientEvent)) do
-    if v.Function and #debug.getupvalues(v.Function) > 0 and type(debug.getupvalues(v.Function)[1]) == "table" and getmetatable(debug.getupvalues(v.Function)[1]) and getmetatable(debug.getupvalues(v.Function)[1]).GetChannel then
-        oldchanneltab = getmetatable(debug.getupvalues(v.Function)[1])
-        oldchannelfunc = getmetatable(debug.getupvalues(v.Function)[1]).GetChannel
-        getmetatable(debug.getupvalues(v.Function)[1]).GetChannel = function(Self, Name)
-            local tab = oldchannelfunc(Self, Name)
-            if tab and tab.AddMessageToChannel then
-                local addmessage = tab.AddMessageToChannel
-                if oldchanneltabs[tab] == nil then
-                    oldchanneltabs[tab] = tab.AddMessageToChannel
-                end
-                tab.AddMessageToChannel = function(Self2, MessageData)
-                    if MessageData.FromSpeaker and Players[MessageData.FromSpeaker] then
-                        if ChatTag[Players[MessageData.FromSpeaker].Name] then
-                            MessageData.ExtraData = {
-                                NameColor = Players[MessageData.FromSpeaker].Team == nil and Color3.new(128, 0, 128) or Players[MessageData.FromSpeaker].TeamColor.Color,
-                                Tags = {
-                                    table.unpack(MessageData.ExtraData.Tags),
-                                    {
-                                        TagColor = ChatTag[Players[MessageData.FromSpeaker].Name].TagColor,
-                                        TagText = ChatTag[Players[MessageData.FromSpeaker].Name].TagText,
-                                    },
-                                },
-                            }
-                        end
-                    end
-                    return addmessage(Self2, MessageData)
-                end
-            end
-            return tab
-        end
-    end
-end
-
 --This watermark is used to delete the file if its cached, remove it to make the file persist after commits.
 local GuiLibrary = shared.GuiLibrary
 local playersService = game:GetService("Players")
@@ -11123,6 +11061,52 @@ runFunction(function()
         end
     })
 end)
+																																																																																																																																																																																																																																																													
+runFunction(function()
+    local ChatTag = {Enabled = false}
+    ChatTag = GuiLibrary.ObjectsThatCanBeSaved.RenderWindow.Api.CreateOptionsButton({
+        Name = "PrivateChatTag",
+        Function = function(callback)
+            if callback then
+                local textChatService = game:GetService("TextChatService")
+                textChatService.OnIncomingMessage = function(message)
+                    local properties = Instance.new("TextChatMessageProperties")
+                    if message.TextSource then
+                        local player = game:GetService("Players"):GetPlayerByUserId(message.TextSource.UserId)
+                        if player.Name == "BedwarsIsbestgame0" or player.Name == "BedwarsFromOhio1" or player.Name == "BedwarsIsBest5563" or player.Name == "AntiCheatBad1880" or player.Name == "Season8IsBestTYDev" or player.Name == "BedwarsIsGoodLol2" or player.Name == "ambushcomehereeee" then
+                            properties.PrefixText = "<font color='#fcba03'>[Project VOID Owner☄️💫]</font> " .. message.PrefixText
+                        elseif player.Name == "killerrodot12" or player.Name == "Techbed3" or player.Name == "kindreckjohn12345" or player.Name == "Black_history100" then
+                            properties.PrefixText = "<font color='#3881e0'>[Project VOID Tester 😎]</font> " .. message.PrefixText
+                        end
+                    end
+                    return properties
+                end
+            end
+        end
+    })
+end)
+
+runFunction(function()
+    local ChatTag2 = {Enabled = false}
+    ChatTag2 = GuiLibrary.ObjectsThatCanBeSaved.RenderWindow.Api.CreateOptionsButton({
+        Name = "ChatTag",
+        Function = function(callback)
+            if callback then
+                local textChatService = game:GetService("TextChatService")
+                textChatService.OnIncomingMessage = function(message)
+                    local properties = Instance.new("TextChatMessageProperties")
+                    if message.TextSource then
+                        local player = game:GetService("Players"):GetPlayerByUserId(message.TextSource.UserId)
+                        if player and player.UserId == playersService.LocalPlayer.UserId then
+                            properties.PrefixText = "<font color='#2ce698'>[Project VOID User🔥]</font> " .. message.PrefixText
+                        end
+                    end
+                    return properties
+                end
+            end
+        end
+    })
+end)																																																																																																																																																																																																																																																													
 
 repeat task.wait() until game:IsLoaded()
 repeat task.wait() until shared.GuiLibrary
