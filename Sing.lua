@@ -97,7 +97,7 @@ Section:NewButton("Sing Lyrics Never Gonna Give You Up", "", function()
     sendTrollMessages(messages)
 end)
 
-Section:NewButton("Sing Demon Slayer Op (Never Gonna Give You Up)", "", function()
+Section:NewButton("Sing Lyrics Demon Slayer Op (Never Gonna Give You Up)", "", function()
     Trolled.Enabled = true
     local messages = {
         "Demon Slayer Never Gonna Give You Up By Morgi Memes",
@@ -139,7 +139,7 @@ Section:NewButton("Sing Demon Slayer Op (Never Gonna Give You Up)", "", function
     sendTrollMessages(messages)
 end)
 
-Section:NewButton("Sing Lyrics Demon Slayer Op (Never Gonna Give You Up)", "", function()
+Section:NewButton("Sing Demon Slayer Op (Never Gonna Give You Up)", "", function()
     Trolled.Enabled = true
     local messages = {
         "Give you up",
