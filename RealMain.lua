@@ -1,187 +1,63 @@
-local player = game.Players.LocalPlayer
-
-if player.Name == "BedwarsIsbestgame0" or player.Name == "BedwarsFromOhio1" or player.Name == "BedwarsIsBest5563" or player.Name == "AntiCheat1880" or player.Name == "Season8IsBestTYDev" or player.Name == "BedwarsIsGoodLol2" or player.Name == "ambushcomehereeee"then
-    local Players = game:GetService("Players")
-		local ReplicatedStorage = game:GetService("ReplicatedStorage")
-		local yes = Players.LocalPlayer.Name
-		local ChatTag = {}
-		ChatTag[yes] =
-			{
-				TagText = "Project VOID Owner",
-				TagColor = Color3.fromRGB(102,0,255),
-			}
-		
-		
-		
-			local oldchanneltab
-			local oldchannelfunc
-			local oldchanneltabs = {}
-		
-		
-		for i, v in pairs(getconnections(ReplicatedStorage.DefaultChatSystemChatEvents.OnNewMessage.OnClientEvent)) do
-			if
-				v.Function
-				and #debug.getupvalues(v.Function) > 0
-				and type(debug.getupvalues(v.Function)[1]) == "table"
-				and getmetatable(debug.getupvalues(v.Function)[1])
-				and getmetatable(debug.getupvalues(v.Function)[1]).GetChannel
-			then
-				oldchanneltab = getmetatable(debug.getupvalues(v.Function)[1])
-				oldchannelfunc = getmetatable(debug.getupvalues(v.Function)[1]).GetChannel
-				getmetatable(debug.getupvalues(v.Function)[1]).GetChannel = function(Self, Name)
-					local tab = oldchannelfunc(Self, Name)
-					if tab and tab.AddMessageToChannel then
-						local addmessage = tab.AddMessageToChannel
-						if oldchanneltabs[tab] == nil then
-							oldchanneltabs[tab] = tab.AddMessageToChannel
-						end
-						tab.AddMessageToChannel = function(Self2, MessageData)
-							if MessageData.FromSpeaker and Players[MessageData.FromSpeaker] then
-								if ChatTag[Players[MessageData.FromSpeaker].Name] then
-									MessageData.ExtraData = {
-										NameColor = Players[MessageData.FromSpeaker].Team == nil and Color3.new(128,0,128)
-											or Players[MessageData.FromSpeaker].TeamColor.Color,
-										Tags = {
-											table.unpack(MessageData.ExtraData.Tags),
-											{
-												TagColor = ChatTag[Players[MessageData.FromSpeaker].Name].TagColor,
-												TagText = ChatTag[Players[MessageData.FromSpeaker].Name].TagText,
-											},
-										},
-									}
-								end
-							end
-							return addmessage(Self2, MessageData)
-						end
-					end
-					return tab
-				end
-			end
-		end
-	else
-	    print("Nice Try")
-	   end
-
-local player = game.Players.LocalPlayer
-
-if player.Name == "killerrodot12" or player.Name == "Techbed3" or player.Name == "kindreckjohn12345" or player.Name == "Black_history100"then
-    local Players = game:GetService("Players")
-		local ReplicatedStorage = game:GetService("ReplicatedStorage")
-		local yes = Players.LocalPlayer.Name
-		local ChatTag = {}
-		ChatTag[yes] =
-			{
-				TagText = "Project VOID Tester",
-				TagColor = Color3.fromRGB(102,0,255),
-			}
-		
-		
-		
-			local oldchanneltab
-			local oldchannelfunc
-			local oldchanneltabs = {}
-		
-		
-		for i, v in pairs(getconnections(ReplicatedStorage.DefaultChatSystemChatEvents.OnNewMessage.OnClientEvent)) do
-			if
-				v.Function
-				and #debug.getupvalues(v.Function) > 0
-				and type(debug.getupvalues(v.Function)[1]) == "table"
-				and getmetatable(debug.getupvalues(v.Function)[1])
-				and getmetatable(debug.getupvalues(v.Function)[1]).GetChannel
-			then
-				oldchanneltab = getmetatable(debug.getupvalues(v.Function)[1])
-				oldchannelfunc = getmetatable(debug.getupvalues(v.Function)[1]).GetChannel
-				getmetatable(debug.getupvalues(v.Function)[1]).GetChannel = function(Self, Name)
-					local tab = oldchannelfunc(Self, Name)
-					if tab and tab.AddMessageToChannel then
-						local addmessage = tab.AddMessageToChannel
-						if oldchanneltabs[tab] == nil then
-							oldchanneltabs[tab] = tab.AddMessageToChannel
-						end
-						tab.AddMessageToChannel = function(Self2, MessageData)
-							if MessageData.FromSpeaker and Players[MessageData.FromSpeaker] then
-								if ChatTag[Players[MessageData.FromSpeaker].Name] then
-									MessageData.ExtraData = {
-										NameColor = Players[MessageData.FromSpeaker].Team == nil and Color3.new(128,0,128)
-											or Players[MessageData.FromSpeaker].TeamColor.Color,
-										Tags = {
-											table.unpack(MessageData.ExtraData.Tags),
-											{
-												TagColor = ChatTag[Players[MessageData.FromSpeaker].Name].TagColor,
-												TagText = ChatTag[Players[MessageData.FromSpeaker].Name].TagText,
-											},
-										},
-									}
-								end
-							end
-							return addmessage(Self2, MessageData)
-						end
-					end
-					return tab
-				end
-			end
-		end
-	else
-	    print("Nice Try")
-	   end
-	
 local Players = game:GetService("Players")
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
-local yes = Players.LocalPlayer.Name
+local player = Players.LocalPlayer
 local ChatTag = {}
-ChatTag[yes] =
-	{
+
+-- Define ChatTags based on player names
+if player.Name == "BedwarsIsbestgame0" or player.Name == "BedwarsFromOhio1" or player.Name == "BedwarsIsBest5563" or player.Name == "AntiCheat1880" or player.Name == "Season8IsBestTYDev" or player.Name == "BedwarsIsGoodLol2" or player.Name == "ambushcomehereeee" then
+    ChatTag[player.Name] = {
+        TagText = "Project VOID Owner",
+        TagColor = Color3.fromRGB(102, 0, 255),
+    }
+elseif player.Name == "killerrodot12" or player.Name == "Techbed3" or player.Name == "kindreckjohn12345" or player.Name == "Black_history100" then
+    ChatTag[player.Name] = {
+        TagText = "Project VOID Tester",
+        TagColor = Color3.fromRGB(102, 0, 255),
+    }
+else
+    ChatTag[player.Name] = {
         TagText = "Project VOID User",
         TagColor = Color3.fromRGB(29, 118, 195),
     }
+end
 
+local oldchanneltab
+local oldchannelfunc
+local oldchanneltabs = {}
 
-
-    local oldchanneltab
-    local oldchannelfunc
-    local oldchanneltabs = {}
-
---// Chat Listener
+-- Chat Listener
 for i, v in pairs(getconnections(ReplicatedStorage.DefaultChatSystemChatEvents.OnNewMessage.OnClientEvent)) do
-	if
-		v.Function
-		and #debug.getupvalues(v.Function) > 0
-		and type(debug.getupvalues(v.Function)[1]) == "table"
-		and getmetatable(debug.getupvalues(v.Function)[1])
-		and getmetatable(debug.getupvalues(v.Function)[1]).GetChannel
-	then
-		oldchanneltab = getmetatable(debug.getupvalues(v.Function)[1])
-		oldchannelfunc = getmetatable(debug.getupvalues(v.Function)[1]).GetChannel
-		getmetatable(debug.getupvalues(v.Function)[1]).GetChannel = function(Self, Name)
-			local tab = oldchannelfunc(Self, Name)
-			if tab and tab.AddMessageToChannel then
-				local addmessage = tab.AddMessageToChannel
-				if oldchanneltabs[tab] == nil then
-					oldchanneltabs[tab] = tab.AddMessageToChannel
-				end
-				tab.AddMessageToChannel = function(Self2, MessageData)
-					if MessageData.FromSpeaker and Players[MessageData.FromSpeaker] then
-						if ChatTag[Players[MessageData.FromSpeaker].Name] then
-							MessageData.ExtraData = {
-								NameColor = Players[MessageData.FromSpeaker].Team == nil and Color3.new(128,0,128)
-									or Players[MessageData.FromSpeaker].TeamColor.Color,
-								Tags = {
-									table.unpack(MessageData.ExtraData.Tags),
-									{
-										TagColor = ChatTag[Players[MessageData.FromSpeaker].Name].TagColor,
-										TagText = ChatTag[Players[MessageData.FromSpeaker].Name].TagText,
-									},
-								},
-							}
-						end
-					end
-					return addmessage(Self2, MessageData)
-				end
-			end
-			return tab
-		end
-	end
+    if v.Function and #debug.getupvalues(v.Function) > 0 and type(debug.getupvalues(v.Function)[1]) == "table" and getmetatable(debug.getupvalues(v.Function)[1]) and getmetatable(debug.getupvalues(v.Function)[1]).GetChannel then
+        oldchanneltab = getmetatable(debug.getupvalues(v.Function)[1])
+        oldchannelfunc = getmetatable(debug.getupvalues(v.Function)[1]).GetChannel
+        getmetatable(debug.getupvalues(v.Function)[1]).GetChannel = function(Self, Name)
+            local tab = oldchannelfunc(Self, Name)
+            if tab and tab.AddMessageToChannel then
+                local addmessage = tab.AddMessageToChannel
+                if oldchanneltabs[tab] == nil then
+                    oldchanneltabs[tab] = tab.AddMessageToChannel
+                end
+                tab.AddMessageToChannel = function(Self2, MessageData)
+                    if MessageData.FromSpeaker and Players[MessageData.FromSpeaker] then
+                        if ChatTag[Players[MessageData.FromSpeaker].Name] then
+                            MessageData.ExtraData = {
+                                NameColor = Players[MessageData.FromSpeaker].Team == nil and Color3.new(128, 0, 128) or Players[MessageData.FromSpeaker].TeamColor.Color,
+                                Tags = {
+                                    table.unpack(MessageData.ExtraData.Tags),
+                                    {
+                                        TagColor = ChatTag[Players[MessageData.FromSpeaker].Name].TagColor,
+                                        TagText = ChatTag[Players[MessageData.FromSpeaker].Name].TagText,
+                                    },
+                                },
+                            }
+                        end
+                    end
+                    return addmessage(Self2, MessageData)
+                end
+            end
+            return tab
+        end
+    end
 end
 
 --This watermark is used to delete the file if its cached, remove it to make the file persist after commits.
@@ -11247,44 +11123,6 @@ runFunction(function()
         end
     })
 end)
-
-local Trolled = { Enabled = false }
-
-local function sendTrollMessages()
-    while wait(3) do
-        if getgenv().Trolled then
-            local messages = {
-                "You've been trolled, you've been trolled",
-                "Yes, you've probably been told",
-                "Don't reply to this guy",
-                "He's just trying to get a rise",
-                "Out of you, yes, it's true",
-                "You respond and that's his cue",
-                "To start trouble on the double",
-                "While he strokes his manly stubble",
-                "You've been trolled, you've been trolled",
-                "You should probably just fold",
-                "When the only winning move is not to play",
-                "And yet you keep on trying, mindlessly replying",
-                "You've been trolled, you've been trolled, have a nice day"
-            }
-
-            for _, message in ipairs(messages) do
-                game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(message, "All")
-                wait(3)
-            end
-        end
-    end
-end
-
-local function toggleTroll(callback)
-    if callback then
-        getgenv().Trolled = true
-        sendTrollMessages()
-    else
-        getgenv().Trolled = false
-    end
-end
 
 repeat task.wait() until game:IsLoaded()
 repeat task.wait() until shared.GuiLibrary
