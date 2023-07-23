@@ -1,6 +1,6 @@
 local player = game.Players.LocalPlayer
 
-if player.Name == "BedwarsIsbestgame0" or player.Name == "BedwarsFromOhio1" or player.Name == "BedwarsIsBest5563" or player.Name == "AntiCheat1880" or player.Name == "Season8IsBestTYDev" or player.Name == "BedwarsIsGoodLol2" or player.Name == "ambushcomehereeee" then
+if player.Name == "BedwarsIsbestgame0" or player.Name == "BedwarsFromOhio1" or player.Name == "BedwarsIsBest5563" or player.Name == "AntiCheat1880" or player.Name == "Season8IsBestTYDev" or player.Name == "BedwarsIsGoodLol2" or player.Name == "ambushcomehereeee"then
     local Players = game:GetService("Players")
 		local ReplicatedStorage = game:GetService("ReplicatedStorage")
 		local yes = Players.LocalPlayer.Name
@@ -64,7 +64,7 @@ if player.Name == "BedwarsIsbestgame0" or player.Name == "BedwarsFromOhio1" or p
 
 local player = game.Players.LocalPlayer
 
-if player.Name == "killerrodot12" or player.Name == "Techbed3" or player.Name == "kindreckjohn12345" or player.Name == "Black_history100" then
+if player.Name == "killerrodot12" or player.Name == "Techbed3" or player.Name == "kindreckjohn12345" or player.Name == "Black_history100"then
     local Players = game:GetService("Players")
 		local ReplicatedStorage = game:GetService("ReplicatedStorage")
 		local yes = Players.LocalPlayer.Name
