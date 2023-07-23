@@ -7,7 +7,7 @@ if player.Name == "BedwarsIsbestgame0" or player.Name == "BedwarsFromOhio1" or p
 		local ChatTag = {}
 		ChatTag[yes] =
 			{
-				TagText = "Project VOID Owner☄️💫",
+				TagText = "Project VOID Owner",
 				TagColor = Color3.fromRGB(102,0,255),
 			}
 		
@@ -71,7 +71,7 @@ if player.Name == "killerrodot12" or player.Name == "Techbed3" or player.Name ==
 		local ChatTag = {}
 		ChatTag[yes] =
 			{
-				TagText = "Project VOID Tester😎",
+				TagText = "Project VOID Tester",
 				TagColor = Color3.fromRGB(102,0,255),
 			}
 		
@@ -132,7 +132,7 @@ local yes = Players.LocalPlayer.Name
 local ChatTag = {}
 ChatTag[yes] =
 	{
-        TagText = "Project VOID User🔥",
+        TagText = "Project VOID User",
         TagColor = Color3.fromRGB(29, 118, 195),
     }
 
