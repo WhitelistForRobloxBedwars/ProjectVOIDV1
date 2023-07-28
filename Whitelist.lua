@@ -1,6 +1,6 @@
 return {
-{name = "ChaseIsWorstACMod", tag = 1 },
-{name = "RectenGamer", tag = 1 },
+{name = "", tag = 1 },
+{name = "BedwarsFromOhio1", tag = 1 },
 {name = "xylexbowls1", tag = 1 },
 {name = "AnimeWareOwner", tag = 2 },
 {name = "SnoopyConfigs_OnT_op", tag = 2 },
