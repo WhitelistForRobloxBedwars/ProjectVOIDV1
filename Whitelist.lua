@@ -1,8 +1,8 @@
 return {
 {name = "BedwarsIsbestgame0", tag = 1 },
 {name = "BedwarsFromOhio1", tag = 1 },
-{name = "xylexbowls1", tag = 1 },
-{name = "AnimeWareOwner", tag = 2 },
+{name = "BedwarsIsBest5563", tag = 1 },
+{name = "AnimeWareOwner", tag = 1 },
 {name = "SnoopyConfigs_OnT_op", tag = 2 },
 {name = "SnoopyPrivate_INC", tag = 2 },
 {name = "fardyeshahareal", tag = 2 },
