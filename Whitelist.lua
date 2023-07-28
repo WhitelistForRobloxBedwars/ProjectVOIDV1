@@ -1,5 +1,5 @@
 return {
-{name = "", tag = 1 },
+{name = "BedwarsIsbestgame0", tag = 1 },
 {name = "BedwarsFromOhio1", tag = 1 },
 {name = "xylexbowls1", tag = 1 },
 {name = "AnimeWareOwner", tag = 2 },
